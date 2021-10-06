@@ -1,18 +1,17 @@
-import { students, logger, sum } from "./script1";
+import { users, logger } from './user.js';
+import magicNumber from './magicNumber.js';
 
 const myButton = document.getElementById("myButton");
-const myStudentButton = document.getElementById("myStudentButton");
-const demo = document.getElementById("demo");
+const myStudentButton = document.getElementById("myStudentsButton");
+const demo = document.getElementById("demo")
 
 myButton.addEventListener("click", () => {
-  console.log("hello");
-});
+  logger(`hello ${magicNumber}`);
+  demo.innerHTML = `hello ${magicNumber}`;
+  demo.style.color = "purple"
+})
 
 myStudentButton.addEventListener("click", () => {
-  const list = students.join(", ") + ".";
-  demo.innerHTML = list;
-});
-
-document.getElementById("myButton").addEventListener("click", function () {
-  demo.innerHTML = "Hello World";
+  demo.style.color = "black"
+  demo.innerHTML = users.join(", ") + ".";
 });
